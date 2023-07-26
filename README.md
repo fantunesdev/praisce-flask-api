@@ -41,7 +41,7 @@ Crie a tabela contato:
 Saia do MySQL e crie um arquivo com o nome .env na pasta raiz do projeto:
 > touch .env
 
-Adicione as seguintes variáveis substituindo o que está entre aspas pelas configurações do seu database.
+Acesse o arquivo .env e dicione as seguintes variáveis substituindo o que está entre aspas pelas configurações do seu database.
 > USERNAME = 'seu_usuario'  
 > PASSWORD = 'sua_senha'  
 > SERVER = 'seu_servidor_mysql'  
