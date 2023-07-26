@@ -1,5 +1,6 @@
-from ..models import contato_model
 from api import db
+
+from ..models import contato_model
 
 
 def cadastrar_contato(contato):
@@ -7,7 +8,7 @@ def cadastrar_contato(contato):
         nome=contato.nome,
         sobrenome=contato.sobrenome,
         email=contato.email,
-        telefone=contato.telefone
+        telefone=contato.telefone,
     )
     db.session.add(contato_db)
     db.session.commit()
@@ -25,7 +26,9 @@ def listar_contato_id(id):
 
 
 def listar_contato_nome(nome):
-    contatos = contato_model.Contato.query.filter(contato_model.Contato.nome.like(f'%{nome}%')).all()
+    contatos = contato_model.Contato.query.filter(
+        contato_model.Contato.nome.like(f'%{nome}%')
+    ).all()
     return contatos
 
 

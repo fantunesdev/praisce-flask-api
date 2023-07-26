@@ -1,7 +1,8 @@
-from flask import request, make_response, jsonify
+from flask import jsonify, make_response, request
 from flask_restful import Resource
 
 from api import api
+
 from ..entidades import contato
 from ..schemas import contato_schema
 from ..services import contato_services
@@ -23,7 +24,7 @@ class ContatoList(Resource):
                 nome=request.json['nome'],
                 sobrenome=request.json['sobrenome'],
                 email=request.json['email'],
-                telefone=request.json['telefone']
+                telefone=request.json['telefone'],
             )
             result = contato_services.cadastrar_contato(novo_contato)
             return make_response(schema_contato.jsonify(result), 201)
@@ -49,10 +50,14 @@ class ContatoDetail(Resource):
                     nome=request.json['nome'],
                     sobrenome=request.json['sobrenome'],
                     email=request.json['email'],
-                    telefone=request.json['telefone']
+                    telefone=request.json['telefone'],
                 )
-                contato_editado = contato_services.editar_contato(contato_db, novo_contato)
-                return make_response(schema_contato.jsonify(contato_editado), 200)
+                contato_editado = contato_services.editar_contato(
+                    contato_db, novo_contato
+                )
+                return make_response(
+                    schema_contato.jsonify(contato_editado), 200
+                )
         return make_response(jsonify('Contato não encontrado.'), 404)
 
     def delete(self, id):

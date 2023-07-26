@@ -1,6 +1,7 @@
 from marshmallow import fields
 
 from api import ma
+
 from ..models import contato_model
 
 

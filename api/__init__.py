@@ -1,8 +1,8 @@
 from flask import Flask
+from flask_marshmallow import Marshmallow
+from flask_migrate import Migrate
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -12,5 +12,5 @@ migrate = Migrate(app, db)
 
 api = Api(app)
 
-from .views import contato_views
 from .models import contato_model
+from .views import contato_views
