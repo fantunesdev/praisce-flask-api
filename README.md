@@ -1,6 +1,6 @@
 # Instruções de instalação
 
-Clone este repositório em um diretório de sua escolha e acesse este diretório:
+Clone este repositório em um diretório de sua escolha e acesse-o:
 > git clone git@github.com:fantunesdev/praisce-flask-api.git diretorio_de_sua_escolha  
 > cd diretorio_de_sua_escolha
 
@@ -9,7 +9,7 @@ Configure a variável de ambiente do Flask
 
 ## Opção 1 - VENV
 
-Instale a virtualenv, ative-a e intale as dependências:
+Instale a virtualenv, ative-a e instale as dependências:
 > python -m venv venv  
 > source venv/bin/activate  
 > pip install -r requirements.txt
@@ -24,7 +24,7 @@ Instale a virtualenv com o poetry e ative-a:
 
 ## Configurações do banco de dados
 
-Acesse o MySQL e crie o banco de dados e conecte-se a ele:
+Acesse o MySQL, crie o banco de dados e conecte-se a ele:
 > CREATE DATABASE seu_database;  
 > CONNECT seu_database;
 

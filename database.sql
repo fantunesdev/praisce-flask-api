@@ -21,3 +21,5 @@ UPDATE praisce.contato SET nome='NomeEditado', sobrenome='SobrenomeEditado', ema
 -- DELETE
 DELETE FROM praisce.contato WHERE id=7;
 
+-- SEARCH
+SELECT id,nome,sobrenome,email,telefone FROM contato WHERE nome LIKE '%carol%';
