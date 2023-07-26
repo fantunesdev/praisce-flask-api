@@ -1,4 +1,5 @@
 from marshmallow import fields
+
 from api import ma
 from ..models import contato_model
 
@@ -10,5 +11,5 @@ class ContatoSchema(ma.Schema):
 
     nome = fields.String(required=True)
     sobrenome = fields.String(required=True)
-    email = fields.String(required=True)
+    email = fields.Email(required=True)
     telefone = fields.String(required=True)
